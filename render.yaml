@@ -1,0 +1,23 @@
+# Render Blueprint for the BACKEND only.
+# The database is NOT on Render any more: it lives on Neon (free, does not expire).
+# You paste the Neon connection string into DATABASE_URL when Render asks for it.
+
+services:
+  - type: web
+    name: api-sentinel-v3-backend
+    runtime: python
+    plan: free
+    region: singapore          # same region as the Neon database = faster queries
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.9"
+      - key: DATABASE_URL
+        sync: false            # Render will ask you to paste the Neon URL
+      - key: CORS_ORIGINS
+        sync: false            # Render will ask; use "*" first, then your Vercel URL
+      - key: SWEEP_INTERVAL_SECONDS
+        value: "60"

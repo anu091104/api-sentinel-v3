@@ -1,0 +1,10 @@
+# Version ranges (not exact pins) so the same file installs on Render's
+# Python 3.11 and on newer Python versions on your laptop.
+fastapi>=0.111,<1.0
+uvicorn>=0.30
+sqlalchemy>=2.0.31,<2.1
+psycopg2-binary>=2.9.9
+apscheduler>=3.10,<4.0
+requests>=2.32
+pydantic>=2.7,<3.0
+python-dotenv>=1.0
