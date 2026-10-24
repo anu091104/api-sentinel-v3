@@ -1,13 +1,16 @@
 import { AreaChart, Area, ResponsiveContainer, YAxis } from 'recharts'
+import { useTheme, CHART_COLORS } from '../theme/ThemeContext.jsx'
 
 // Tiny chart of the last 10 response times, drawn on each card.
 export default function Sparkline({ data, isDown }) {
+  const { resolved } = useTheme()
+  const palette = CHART_COLORS[resolved]
   if (!data || data.length < 2) {
     return <div className="spark-empty">Trend appears after a couple of checks</div>
   }
   const points = data.map((v, i) => ({ i, v }))
-  const color = isDown ? '#e5484d' : '#0e0e0e'
-  const id = isDown ? 'spark-down' : 'spark-up'
+  const color = isDown ? palette.down : palette.line
+  const id = `spark-${isDown ? 'down' : 'up'}-${resolved}`
 
   return (
     <div className="spark">

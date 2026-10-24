@@ -8,3 +8,6 @@ export const Search = (p) => <svg {...base} width={18} height={18} {...p}><circl
 export const Refresh = (p) => <svg {...base} width={16} height={16} {...p}><path d="M20 11a8 8 0 1 0-2.3 5.7" /><path d="M20 4v7h-7" /></svg>
 export const Close = (p) => <svg {...base} {...p}><path d="M6 6l12 12M18 6L6 18" /></svg>
 export const Plus = (p) => <svg {...base} width={16} height={16} {...p}><path d="M12 5v14M5 12h14" /></svg>
+export const Sun = (p) => <svg {...base} width={16} height={16} {...p}><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg>
+export const Moon = (p) => <svg {...base} width={16} height={16} {...p}><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" /></svg>
+export const Monitor = (p) => <svg {...base} width={16} height={16} {...p}><rect x="3" y="4" width="18" height="12" rx="2" /><path d="M8 20h8M12 16v4" /></svg>

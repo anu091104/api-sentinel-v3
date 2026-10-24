@@ -5,7 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="API Sentinel checks your APIs every minute and shows uptime, response time and failures on one simple screen." />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%230e0e0e'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%23fff'/%3E%3C/svg%3E" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f1f1ef" />
     <title>API Sentinel</title>
+    <!-- Sets the theme BEFORE the page paints, so it never flashes the wrong colours.
+         Must stay in sync with src/theme/ThemeContext.jsx (same storage key). -->
+    <script>
+      (function () {
+        var pref = 'system';
+        try { pref = localStorage.getItem('api-sentinel-theme') || 'system'; } catch (e) {}
+        var dark = pref === 'dark' || (pref !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        var root = document.documentElement;
+        root.dataset.theme = dark ? 'dark' : 'light';
+        root.style.colorScheme = dark ? 'dark' : 'light';
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -1,5 +1,6 @@
 import { Link, NavLink } from 'react-router-dom'
 import Logo from './Logo.jsx'
+import ThemeToggle from './ThemeToggle.jsx'
 import { API_BASE } from '../api.js'
 
 const GITHUB_URL = 'https://github.com/anu091104'
@@ -33,6 +34,7 @@ export default function Nav({ page }) {
       </nav>
 
       <div className="nav-right">
+        <ThemeToggle />
         <a className="nav-plain" href={GITHUB_URL} target="_blank" rel="noreferrer">GitHub</a>
         <span className="nav-divider" />
         {page === 'home' ? (
