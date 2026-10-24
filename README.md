@@ -9,7 +9,7 @@ are up, how fast they answer, and how reliable they have been over the last 24 h
 ![APScheduler](https://img.shields.io/badge/APScheduler-60s%20checks-0e0e0e)
 ![Docker](https://img.shields.io/badge/Docker-compose-0e0e0e?logo=docker)
 
-**Live demo:** _add your Vercel link here_ &nbsp;|&nbsp; **API docs:** _add your Render link + `/docs`_
+**Live demo:** https://frontend-swart-gamma-77.vercel.app/ &nbsp;|&nbsp; **API docs:** https://api-sentinel-v3-backend.onrender.com + `/docs`_
 
 ![Home page](docs/home.png)
 
